@@ -1,82 +1,176 @@
-@import url("./normalize.css");
-@import url("./base.css");
-@import url("./theme.css");
-/* @import url("./style.css"); */
+@import url('normalize.css');
+@import url('base.css');
+@import url('theme.css');
+/* @import url('style.css'); */
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 /* 숨김 콘텐츠 */
 .sr-only {
-    position: absolute;
-width: 1px;
-height: 1px;
-padding: 0;
-margin: -1px;
-overflow: hidden;
-clip: rect(0, 0, 0, 0);
-white-space: nowrap;
-border-width: 0;    
-}
-/*컨테이너*/
-.container{
-    min-width: 16.25rem;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-/*헤더 */
-.appHeader{
-    background-color: var(--primary-color);
-    color: var(--white);
-    display: flex;
-    flex-flow: row wrap;
-    padding: var(--spacing--base) var(--spacing--lg)
+/* 켄터이너 */
+.container {
+  min-width: 16.25rem;
 }
 
-/*로고*/
+/* 웹카페 반응형 스타일 */
+/* 공통 스타일 */
+body {
+  font-size: var(--text-sm);
+}
+
+/* 공통 아이콘 */
+.far {
+  margin-right: var(--spacing-xs);
+}
+
+/* 공통 헤더 */
+.appHeader {
+  position: relative;
+  padding: var(--spacing-base) var(--spacing-lg) 0;
+}
+
+/* 공통 로고 */
 .logo {
-    width: 100%;
+  width: 12.75rem; /* 204px */
+  height: 3.75rem; /* 60px */
 }
 
 .logo__link {
-    display: block;
-    width: 12.75rem;
-    height: 3.6875rem;
-    background-image: url(../images/webcafe-logo@2x.png);
-    background-size: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(./../images/webcafe-logo.png) no-repeat 0 0 / 100%;
 }
 
-/* 멤버 서비스 */
-.memberOnly{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    order: -1;
-
+/* 공통 멤버서비스 */
+.memberOnly {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
 }
 
-/* 검색 폼*/
-.searchForm{
-    width: 100%;
+/* 공통 검색 폼 */
+
+input[type='search'] {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.searchForm__group{
-    display: flex;
-    gap: var(--spacing--sm);
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.formInput{
-    background-color: yellow;
-    flex-grow: 1;
+.button--none {
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+  background: transparent;
+}
+
+.button--fillSecondary {
+  color: var(--white);
+  background: var(--secondary-color);
+}
+
+.button--outlineSecondary {
+  color: var(--secondary-color);
+  border: 1px solid currentColor;
 }
 
 .formInput__input {
-    width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.75rem;
+  width: 100%;
 }
 
-.searchForm__button{
-    white-space: nowrap;
+.searchForm__group {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--spacing-xs);
 }
 
+/* 모바일 디바이스 */
+@media (min-width: 320px) and (max-width: 767px) {
+  /* 모바일 헤더 */
+  .appHeader {
+    background: var(--primary-color);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--spacing-sm);
+  }
+
+  /* 모바일 멤버서비스 */
+  .memberOnly {
+    color: var(--white);
+    order: -1;
+  }
+  /* 모바일 검색폼 */
+  .searchForm__group .formInput {
+    flex-grow: 1;
+  }
+}
+
+/* 데스크탑 디바이스 */
+@media (min-width: 768px) {
+  /* 데스크탑 헤더 */
+  .appHeader {
+    display: grid;
+    grid-template-columns: 204px 1fr;
+    gap: var(--spacing-base);
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* 데스크탑 로고 */
+  .logo {
+    grid-area: 1 / 1 / 3 / 2;
+    align-self: center;
+  }
+
+  /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    justify-content: flex-end;
+  }
+  .searchForm__group .formInput {
+    width: 25rem;
+  }
+
+  .formInput__input {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+
+  /* 데스크탑 메인 메뉴 제어 버튼 */
+  .buttonWrapper {
+    display: none;
+  }
+}
