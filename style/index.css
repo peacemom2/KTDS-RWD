@@ -200,7 +200,17 @@ fieldset {
 
 /* 데스크탑 디바이스 */
 @media (min-width: 768px) {
-  /* 데스크탑 헤더 */
+  /*데스크탑 공통*/
+    .appHeader, 
+    .menu__list, 
+    .appMain, 
+    .appFooter{
+        max-width: var(--container-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
+    /* 데스크탑 헤더 */
   .appHeader {
     display: grid;
     grid-template-columns: 204px 1fr;
@@ -232,4 +242,28 @@ fieldset {
   .buttonWrapper {
     display: none;
   }
+
+  /*데스크탑 메인 메뉴*/
+  .menu{
+    background-color: var(--secondary-color);
+    color: var(--white);
+  }
+  .menu__list{
+    display: flex;
+    flex-flow: row nowrap;
+    
+
+    justify-content: space-between;
+  }
+  .menu__item{
+    padding: 0.5rem 0;
+
+  }
+  .menu__link{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 0;
+  }
+
 }
