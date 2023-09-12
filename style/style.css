@@ -26,33 +26,16 @@
 .book, .news, .board, .favorite, .twitter {
     width: 100%;
 }
+
 .appFooter{
     background-color: lime;
     height: 100px;  
 }
 
-.book{
-    background-color: skyblue;
-    width: 30%;
-}
-.boardWrapper{
-    background-color: grey;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-}
-.board{
-    background-color: tomato;
-    order: 1;
-}
-.favoriteWrapper{
-    background-color: teal;
-    display: flex;
-    flex-direction: row;
-}
-.twitter{
+.book {
     order: -1;
 }
+
 
 @media (min-width: 768px){
     .bookWrapper{
@@ -64,5 +47,26 @@
         width: 100%;
 
     }
+    .book{
+        background-color: skyblue;
+        width: 30%;
     }
-}
+    .boardWrapper{
+        background-color: grey;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+    .board{
+        background-color: tomato;
+        order: 1;
+    }
+    .favoriteWrapper{
+        background-color: teal;
+        display: flex;
+        flex-direction: row;
+    }
+    .twitter{
+        order: -1;
+    }
+    }

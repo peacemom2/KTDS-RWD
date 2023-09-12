@@ -1,10 +1,61 @@
 @import url("./normalize.css");
 @import url("./base.css");
 @import url("./theme.css");
-@import url("./style.css");
+/* @import url("./style.css"); */
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+    position: absolute;
+width: 1px;
+height: 1px;
+padding: 0;
+margin: -1px;
+overflow: hidden;
+clip: rect(0, 0, 0, 0);
+white-space: nowrap;
+border-width: 0;    
+}
+/*헤더 */
 .appHeader{
     background-color: var(--primary-color);
     color: var(--white);
+    display: flex;
+    flex-flow: row wrap;
+    padding: var(--spacing--base) var(--spacing--lg)
+}
+
+/*로고*/
+.logo {
+    width: 100%;
+}
+.logo__link {
+    display: block;
+    width: 12.75rem;
+    height: 3.6875rem;
+    border-image: url(../images/webcafe-logo@2x.png);
+    background-size: cover;
+}
+
+/* 멤버 서비스 */
+.memberOnly{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    order: -1;
+    
+}
+
+/* 검색 폼*/
+.searchForm{
+    width: 100%;
+}
+
+.a11y {
 
 }
