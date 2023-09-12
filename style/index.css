@@ -21,6 +21,11 @@ clip: rect(0, 0, 0, 0);
 white-space: nowrap;
 border-width: 0;    
 }
+/*컨테이너*/
+.container{
+    min-width: 16.25rem;
+}
+
 /*헤더 */
 .appHeader{
     background-color: var(--primary-color);
@@ -34,11 +39,12 @@ border-width: 0;
 .logo {
     width: 100%;
 }
+
 .logo__link {
     display: block;
     width: 12.75rem;
     height: 3.6875rem;
-    border-image: url(../images/webcafe-logo@2x.png);
+    background-image: url(../images/webcafe-logo@2x.png);
     background-size: cover;
 }
 
@@ -48,7 +54,7 @@ border-width: 0;
     flex-direction: row;
     width: 100%;
     order: -1;
-    
+
 }
 
 /* 검색 폼*/
@@ -56,6 +62,21 @@ border-width: 0;
     width: 100%;
 }
 
-.a11y {
-
+.searchForm__group{
+    display: flex;
+    gap: var(--spacing--sm);
 }
+
+.formInput{
+    background-color: yellow;
+    flex-grow: 1;
+}
+
+.formInput__input {
+    width: 100%;
+}
+
+.searchForm__button{
+    white-space: nowrap;
+}
+
