@@ -275,6 +275,33 @@ iframe {
   right: 0;
 }
 
+/* 공통 인기사이트 */
+.favorite__list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.favorite__item {
+  margin-top: var(--spacing-xs);
+}
+
+.favorite__link {
+  display: block;
+  position: relative;
+}
+
+.favorite__link:hover::after,
+  .favorite__link:focus::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 0.5em;
+  margin-left: 1em;
+  background: #000;
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: var(--text-sm);
+}
 
 /* 모바일 디바이스 */
 @media (min-width: 320px) and (max-width: 767px) {
