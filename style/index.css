@@ -120,7 +120,6 @@ fieldset {
 
 /* 공통 메인 메뉴 */
 .menu__list {
-  background: #ff0;
   padding: var(--spacing-lg);
 }
 
@@ -183,6 +182,7 @@ fieldset {
   flex-flow: column nowrap;
   justify-content: center;
   margin-bottom: var(--spacing-base);
+  font-weight: 700;
 }
 
 .appMain [class*='__koTitle'] {
@@ -198,37 +198,47 @@ fieldset {
   line-height: 1.5;
   margin-top: var(--spacing-base);
 }
-
-.news__videoContainer .iframeWrapper {
-  aspect-ratio: 16/9;
+/* 공통 추천서적 */
+.book__cover {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
 }
 
-.news__videoContainer iframe {
+.book__coverCaption {
+  margin-top: var(--spacing-sm);
+}
+
+.book__info {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.ratingStar {
+  font-size: var(--text-lg);
+}
+
+/* 공통 새소식 */
+.iframeWrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
 
-/**공통 트위터 */
-.twitter__container{
-  background: yellow;
-  display: flow-root;
-}
-
-.twitter__userInfo{
-  background: aqua;
-  display: inline-flex;
-}
-
-.twitter__userProfile{
-  float: right;
-  shape-outside: circle(50%);
-  width: 20%;
-}
-.twitter__userProfileImage{
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: 30% 40%;
+.news__date {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-sm);
 }
 
 /* 모바일 디바이스 */
@@ -392,7 +402,7 @@ fieldset {
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas:
       'news news news news news news news news news news news news'
-      'book book book book . twitter twitter twitter twitter favorite favorite favorite '
+      'book book book book . twitter twitter twitter twitter favorite favorite favorite'
       'book book book book . board board board board board board board';
   }
 
